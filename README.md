@@ -105,11 +105,11 @@ Daftar IP dari tabel tersebut akan digunakan pada konfigurasi pada Cisco Packet 
 
 ![image](./images/pucci_vlsm.png)
 
-Pada gambar di atas, ipv4 address dari pucci diarahkan ke ip yang terdaftar di tabel subnet A1 ditambah 1. Sedangkan untuk Client Jipangu dapat dilihat seperti di bawah ini.
+Pada gambar di atas, ipv4 address dari pucci diarahkan ke ip yang terdaftar di tabel subnet A1 ditambah 1 karena `10.30.27.145` adalah network ID. Pada suatu subnet terdapat dua ip yang tidak dapat digunakan yaitu network ID dan broadcast IP. Sedangkan untuk Client Jipangu dapat dilihat seperti di bawah ini.
 
 ![image](./images/jipangu_vlsm.png)
 
-Pada gambar di atas, Client Jipangu akan memiliki IP yang berada dalam interval usable IP yang terdapat pada table subnet A1. Pada kasus di atas, IP Jipangu akan memiliki ip yang tertera di table **ditambah 2**. Untuk host dan router lainnya akan memiliki konfigurasi serupa seperti yang telah tertera di atas
+Pada gambar di atas, Client Jipangu akan memiliki IP yang berada dalam interval usable IP yang terdapat pada table subnet A1. Pada kasus di atas, IP Jipangu akan memiliki ip yang tertera di table **ditambah 2**. IP gateway dari Jipangu `10.30.27.146` karena ketika Jipangu ingin mengirim paket di luar subnet, paket harus diterusklan melalui PUCCI yang terhubung di subnet A1 adalah `10.30.27.146`.Untuk host dan router lainnya akan memiliki konfigurasi serupa seperti yang telah tertera di atas
 
 ### Tabel Routing Table
 Untuk mengirim paket yang melalui lebih dari satu router maka akan memerlukan routing agar paket dapat sampai di tujuan. Untuk routing table dari VLSM dapat di lihat pada gambar di bawah ini
@@ -165,7 +165,7 @@ Untuk mengirim paket yang melalui lebih dari satu router maka akan memerlukan ro
 0.0.0.0/0 via 10.30.26.1
 ```
 
-Setelah konfigurasi di atas di tambahkan di setiap router, maka 
+Setelah konfigurasi di atas di tambahkan di setiap router, maka semua host dan router akan bisa terkoneksi satu sama lain
 
 ## GNS3 - Metode CIDR
 ### Gambar Topologi
