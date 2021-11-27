@@ -12,10 +12,73 @@ Anggota Kelompok E02:
 
 ## Intro
 
+Pada praktikum modul 4, software yang digunakan adalah CPT (Cisco Packet Tracker) dan GNS3. 
+Metode perhitungan classless yang harus digunakan adalah VLSM dan CIDR.
+Kelompok E02 menentukan metode **VLSM diterapkan di CPT**, sedangkan metode **CIDR diterapkan di GNS3**.
+
+Pertama-tama, pemberian nama subnet dilakukan (A1, A2, A3, ..., A15). Berikut ini adalah gambar plotting subnet A1 sampai dengan A15.
+
+![image](./images/plot_topologi_a1_sampai_a15.png)
+
+Setelah pemberian nama subnet telah dilakukan, pendataan kebutuhan IP dari setiap subnet dilakukan dimulai dari subnet A1 sampai dengan A15.
+
+1. Subnet A1 menghubungkan client JIPANGU (100 Host) dan router PUCCI. Client JIPANGU membutuhkan 100 IP dan router PUCCI membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 100+1=101.
+2. Subnet A2 menghubungkan client CIPHER (700 Host) dan router WATER7. Client CIPHER membutuhkan 700 IP dan router WATER7 membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 700+1=701.
+3. Subnet A3 menghubungkan client COURTYARD (1020 Host), client CALMBELT (1000 Host), dan router PUCCI. Client COURTYARD membutuhkan 1020 IP, client CALMBELT membutuhkan 1000 IP, dan router PUCCI membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 1020+1000+1=2021.
+4. Subnet A4 menghubungkan router PUCCI dan router WATER7. Masing-masing membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 1+1=2.
+5. Subnet A5 menghubungkan router WATER7 dan router FOOSHA. Masing-masing membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 1+1=2.
+6. Subnet A6 menghubungkan client BLUENO (1000 Host) dan router FOOSHA. Client BLUENO membutuhkan 1000 IP dan router FOOSHA membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 1000+1=1001.
+7. Subnet A7 menghubungkan server DORIKI dan router FOOSHA. Masing-masing membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 1+1=2.
+8. Subnet A8 menghubungkan router FOOSHA dan router GUANHAO. Masing-masing membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 1+1=2.
+9. Subnet A9 menghubungkan client JABRA (520 Host) dan router GUANHAO. Client JABRA membutuhkan 520 IP dan router GUANHAO membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 520+1=521.
+10. Subnet A10 menghubungkan router GUANHAO dan router OIMO. Masing-masing membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 1+1=2.
+11. Subnet A11 menghubungkan router GUANHAO, router ALABASTA, dan client MAINGATE (500 Host). Client MAINGATE membutuhkan 500 IP, router GUANHAO membutuhkan 1 IP, dan router ALABASTA membuthkan 1 IP sehingga total kebutuhan IP-nya adalah 500+1+1=502.
+12. Subnet A12 menghubungkan router ALABASTA dan client JORGE (12 Host). Client JORGE membutuhkan 12 IP dan router ALABASTA membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 12+1=13.
+13. Subnet A13 menghubungkan router OIMO, router SEASTONE, dan client ENIESLOBBY (250 Host). Client ENIESLOBBY membutuhkan 250 IP, router SEASTONE membutuhkan 1 IP, dan router OIMO membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 250+1+1=252.
+14. Subnet A14 menghubungkan router OIMO dan server FUKUROU. Masing-masing membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 1+1=2.
+15. Subnet A15 menghubungkan router SEASTONE dan client ELENA (720 Host). Client ELENA membutuhkan 720 IP dan router SEASTONE membutuhkan 1 IP sehingga total kebutuhan IP-nya adalah 720+1=721.
+
+Dengan demikian total kebutuhan IP adalah 5845 dan netmask /19 cukup untuk digunakan.
+
+Berdasarkan hasil pendataan di atas, dibuat Tabel 1. Tabel Kebutuhan IP Setiap Subnet dan Netmask Minimum
+
+| Subnet | Jumlah IP | Netmask |
+| --- | --- | --- |
+| A1 | 101 | /25 |
+| A2 | 701 | /22 |
+| A3 | 2021 | /21 |
+| A4 | 2 | /30 |
+| A5 | 2 | /30 |
+| A6 | 1001 | /22 |
+| A7 | 2 | /30 |
+| A8 | 2 | /30 |
+| A9 | 521 | /22 |
+| A10 | 2 | /30 |
+| A11 | 502 | /23 |
+| A12 | 13 | /28 |
+| A13 | 252 | /24 |
+| A14 | 2 | /30 |
+| A15 | 721 | /22 |
+| Total | 5845 | /19 |
+
 ## Cisco Packet Tracer - Metode VLSM
+
+Metode VLSM digunakan untuk membagi alamat-alamat IP pada CPT (Cisco Packet Tracker)
+
 ### Topologi
 
+![image](./images/plot_topologi_a1_sampai_a15.png)
+
 ### Tree Pembagian IP
+
+Berdasarkan Tabel 1. Tabel Kebutuhan IP Setiap Subnet dan Netmask Minimum, pembagian IP dilakukan dengan model tree (pohon). Berikut ini adalah tree-nya.
+
+![image](./images/vlsm_tree.png)
+
+Prefix IP yang harus digunakan adalah 10.30.x.x. Dengan demikian, pembagian IP dimulai dari 10.30.0.0/19. 
+Pada dasarnya, pembagian IP dilakukan dengan prinsip separuh-separuh. 
+Misalnya, IP 10.30.0.0/19 mempunyai range IP dari 10.30.0.0 sampai dengan 10.30.31.255. 
+Oleh karena itu, seperti yang ditulis pada tree di atas, IP 10.30.0.0/19 dibagi menjadi dua yaitu IP 10.30.0.0 sampai dengan 10.30.15.255 yang dapat ditulis 10.30.0.0/20 dan IP 10.30.16.0 sampai dengan 10.30.31.255 yang dapat ditulis 10.30.16.0/20.
 
 ### Tabel Pembagian IP
 Setelah melakukan pembagian IP menggunakan tree, daftar IP disajikan ke dalam table
