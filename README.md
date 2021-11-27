@@ -1,1 +1,11 @@
 # Jarkom-Modul-4-E02-2021
+
+Berikut adalah laporan resmi Praktikum Jaringan Komputer Modul 4 tahun 2021
+
+Anggota Kelompok E02:
+
+- 05111940000050 - Erki Kadhafi Rosyid
+- 05111940000063 - Ryan Garnet Andrianto
+- 05111940000141 - Refaldyka Galuh Pratama
+
+![image](./images/topologi_soal.png)
