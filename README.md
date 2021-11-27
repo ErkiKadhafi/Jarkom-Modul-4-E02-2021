@@ -181,10 +181,9 @@ Pada topologi di atas, kami tidak memperhitungkan server untuk dibuat subnet ter
 
 ### Tabel Pembagian IP
 
-![image](https://user-images.githubusercontent.com/70801807/143681909-a7d84355-27d7-4ef7-b98b-afe95de253f3.png)
+![image](https://user-images.githubusercontent.com/70801807/143682186-4fca839d-e109-484c-b7ff-a821f86380bf.png)
 
-
-### Tabel Routing Table
+#### Konfigurasi Router
 
 #### 1. FOOSHA
 ```
@@ -247,3 +246,9 @@ route add -net 10.30.8.0 netmask 255.255.252.0 gw 10.30.5.3
 ```
 route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.5.1
 ```
+
+
+### Tabel Routing Table
+
+![image](https://user-images.githubusercontent.com/70801807/143682239-3141da0b-0855-4b93-a1c2-ca8b793021ee.png)
+
