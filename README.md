@@ -177,6 +177,73 @@ Pada topologi di atas, kami tidak memperhitungkan server untuk dibuat subnet ter
 
 ### Tree pembagian
 
+![Modul4 - Tree](https://user-images.githubusercontent.com/70801807/143681764-9be8d4ac-d4b4-4fc0-9c3e-4b8f312485f6.jpg)
+
 ### Tabel Pembagian IP
+
+![image](https://user-images.githubusercontent.com/70801807/143681909-a7d84355-27d7-4ef7-b98b-afe95de253f3.png)
+
+
 ### Tabel Routing Table
 
+#### 1. FOOSHA
+```
+route add -net 10.30.20.0 netmask 255.255.252.0 gw 10.30.4.106
+route add -net 10.30.4.128 netmask 255.255.255.128 gw 10.30.4.106
+
+route add -net 10.30.24.0 netmask 255.255.248.0 gw 10.30.4.106
+
+route add -net 10.30.12.0 netmask 255.255.252.0 gw 10.30.4.98
+
+route add -net 10.30.6.0 netmask 255.255.254.0 gw 10.30.4.98
+route add -net 10.30.4.112 netmask 255.255.255.240 gw 10.30.4.98
+
+route add -net 10.30.4.64 netmask 255.255.255.252 gw 10.30.4.98
+
+route add -net 10.30.5.0 netmask 255.255.255.0 gw 10.30.4.98
+
+route add -net 10.30.8.0 netmask 255.255.252.0 gw 10.30.4.98
+```
+
+#### 2. WATER7
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.4.105
+route add -net 10.30.4.128 netmask 255.255.255.128 gw 10.30.4.110
+
+route add -net 10.30.24.0 netmask 255.255.248.0 gw 10.30.4.110
+```
+
+#### 3. PUCCI
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.4.109
+```
+
+#### 4. GUANHAO
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.4.97
+
+route add -net 10.30.4.112 netmask 255.255.255.240 gw 10.30.6.3
+
+route add -net 10.30.4.64 netmask 255.255.255.252 gw 10.30.4.70
+
+route add -net 10.30.5.0 netmask 255.255.255.0 gw 10.30.4.70
+
+route add -net 10.30.8.0 netmask 255.255.252.0 gw 10.30.4.70
+```
+
+#### 5. ALABASTA
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.6.1
+```
+
+#### 6. OIMO
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.4.69
+
+route add -net 10.30.8.0 netmask 255.255.252.0 gw 10.30.5.3
+```
+
+#### 7. SEASTONE
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.5.1
+```
