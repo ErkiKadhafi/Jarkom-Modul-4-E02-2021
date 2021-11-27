@@ -18,7 +18,7 @@ Kelompok E02 menentukan metode **VLSM diterapkan di CPT**, sedangkan metode **CI
 
 Pertama-tama, pemberian nama subnet dilakukan (A1, A2, A3, ..., A15). Berikut ini adalah gambar plotting subnet A1 sampai dengan A15.
 
-![image](./images/plot_topologi_a1_sampai_a15.png)
+![image](./images/plot_topologi_a1_sampai_a15.jpg)
 
 Setelah pemberian nama subnet telah dilakukan, pendataan kebutuhan IP dari setiap subnet dilakukan dimulai dari subnet A1 sampai dengan A15.
 
@@ -67,13 +67,13 @@ Metode VLSM digunakan untuk membagi alamat-alamat IP pada CPT (Cisco Packet Trac
 
 ### Topologi
 
-![image](./images/plot_topologi_a1_sampai_a15.png)
+![image](./images/plot_topologi_a1_sampai_a15.jpg)
 
 ### Tree Pembagian IP
 
 Berdasarkan Tabel 1. Tabel Kebutuhan IP Setiap Subnet dan Netmask Minimum, pembagian IP dilakukan dengan model tree (pohon). Berikut ini adalah tree-nya.
 
-![image](./images/vlsm_tree.png)
+![image](./images/vlsm_tree.jpg)
 
 Prefix IP yang harus digunakan adalah 10.30.x.x. Dengan demikian, pembagian IP dimulai dari 10.30.0.0/19. 
 Pada dasarnya, pembagian IP dilakukan dengan prinsip separuh-separuh. 
