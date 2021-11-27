@@ -6,7 +6,7 @@ Anggota Kelompok E02:
 
 - 05111940000050 - Erki Kadhafi Rosyid
 - 05111940000063 - Ryan Garnet Andrianto
-- 05111940000141 - Refaldyka Galuh Pratama
+- 05111940000141 - Muhammad Farhan Haykal
 
 ![image](./images/topologi_soal.png)
 
@@ -115,5 +115,5 @@ Pada topologi di atas, kami tidak memperhitungkan server untuk dibuat subnet ter
 ### Tree pembagian
 
 ### Tabel Pembagian IP
-
 ### Tabel Routing Table
+
