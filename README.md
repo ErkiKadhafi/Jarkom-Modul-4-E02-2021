@@ -9,3 +9,17 @@ Anggota Kelompok E02:
 - 05111940000141 - Refaldyka Galuh Pratama
 
 ![image](./images/topologi_soal.png)
+
+## Intro
+
+## Cisco Packet Tracer - Metode VLSM
+### Topologi
+### Tree Pembagian IP
+### Tabel Pembagian IP
+### Tabel Routing Table
+
+## GNS3 - Metode CIDR
+### Gambar Topologi
+### Tree pembagian
+### Tabel Pembagian IP
+### Tabel Routing Table
