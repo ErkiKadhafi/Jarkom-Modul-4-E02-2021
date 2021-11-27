@@ -181,70 +181,63 @@ Pada topologi di atas, kami tidak memperhitungkan server untuk dibuat subnet ter
 
 ### Tabel Pembagian IP
 
-![image](https://user-images.githubusercontent.com/70801807/143682186-4fca839d-e109-484c-b7ff-a821f86380bf.png)
+![image](https://user-images.githubusercontent.com/70801807/143684817-e1665ed3-819b-4eae-ad1e-a2916774a95d.png)
 
-#### Konfigurasi Router
+![image](https://user-images.githubusercontent.com/70801807/143684833-32ad3de0-5b7e-45a8-8eec-afa9de455daa.png)
+
+
+### KONFIGURASI ROUTER
 
 #### 1. FOOSHA
 ```
-route add -net 10.30.20.0 netmask 255.255.252.0 gw 10.30.4.106
-route add -net 10.30.4.128 netmask 255.255.255.128 gw 10.30.4.106
+route add -net 10.30.0.0 netmask 255.255.128.0 gw 10.30.64.2
 
-route add -net 10.30.24.0 netmask 255.255.248.0 gw 10.30.4.106
+route add -net 10.30.128.0 netmask 255.255.192.0 gw 10.30.160.2
 
-route add -net 10.30.12.0 netmask 255.255.252.0 gw 10.30.4.98
+route add -net 69.69.1.0 netmask 255.255.255.252 gw 10.30.160.2
 
-route add -net 10.30.6.0 netmask 255.255.254.0 gw 10.30.4.98
-route add -net 10.30.4.112 netmask 255.255.255.240 gw 10.30.4.98
-
-route add -net 10.30.4.64 netmask 255.255.255.252 gw 10.30.4.98
-
-route add -net 10.30.5.0 netmask 255.255.255.0 gw 10.30.4.98
-
-route add -net 10.30.8.0 netmask 255.255.252.0 gw 10.30.4.98
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.30.0.0/16
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 151.93.60.0/30
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 69.69.1.0/30
 ```
 
 #### 2. WATER7
 ```
-route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.4.105
-route add -net 10.30.4.128 netmask 255.255.255.128 gw 10.30.4.110
-
-route add -net 10.30.24.0 netmask 255.255.248.0 gw 10.30.4.110
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.64.1
+route add -net 10.30.0.0 netmask 255.255.224.0 gw 10.30.16.2
 ```
 
 #### 3. PUCCI
 ```
-route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.4.109
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.16.1
 ```
 
 #### 4. GUANHAO
 ```
-route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.4.97
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.160.1
 
-route add -net 10.30.4.112 netmask 255.255.255.240 gw 10.30.6.3
+route add -net 69.69.1.0 netmask 255.255.255.252 gw 10.30.136.2
 
-route add -net 10.30.4.64 netmask 255.255.255.252 gw 10.30.4.70
+route add -net 10.30.128.0 netmask 255.255.240.0 gw 10.30.136.2
 
-route add -net 10.30.5.0 netmask 255.255.255.0 gw 10.30.4.70
-
-route add -net 10.30.8.0 netmask 255.255.252.0 gw 10.30.4.70
+route add -net 10.30.146.0 netmask 255.255.255.240 gw 10.30.144.3
 ```
 
 #### 5. ALABASTA
 ```
-route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.6.1
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.144.1
 ```
 
 #### 6. OIMO
 ```
-route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.4.69
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.136.1
 
-route add -net 10.30.8.0 netmask 255.255.252.0 gw 10.30.5.3
+route add -net 10.30.128.0 netmask 255.255.252.0 gw 10.30.132.3
 ```
 
 #### 7. SEASTONE
 ```
-route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.30.5.1
+route add -net 1.0.0.0 netmask 0.0.0.0 gw 10.30.132.1
 ```
 
 
